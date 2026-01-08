@@ -21,6 +21,7 @@ let tie;
 /*-------------------------------- Functions --------------------------------*/
 init();
 
+
 function init() {
     board = ['', '', '', '', '', '', '', '', ''];
     turn = 'X';
@@ -28,6 +29,31 @@ function init() {
     tie = false;
     render();
 }
+
+
+function render() {
+    updateBoard();
+    updateMessage();
+}
+
+
+function updateBoard() {{
+    board.forEach((square, index) => {
+        squareEls[index].textContent = square;
+    });
+}
+
+
+function updateMessage() {
+    if (winner, tie) === false {
+        messageEl.textContent = `It's ${turn}'s turn`;
+    } else if (winner === false && tie === true) {
+        messageEl.textContent = `It's a tie!`;
+    } else {
+        messageEl.textContent = `Congratulations, ${turn} wins!`;
+    }
+}}
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
